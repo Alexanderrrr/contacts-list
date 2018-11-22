@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="container">
   <h3>Add contact</h3>
   <form @submit.prevent="addContact">
     <label>First Name</label>
@@ -30,7 +30,7 @@
         <td>{{ contact.lastName }}</td>
         <td>{{ contact.email }}</td>
         <td>
-          <button @click='removeContact(contact)'>Remove</button>
+          <button class="btn btn-danger" @click='removeContact(contact)'>Remove</button>
         </td>
       </tr>
     </tbody>
