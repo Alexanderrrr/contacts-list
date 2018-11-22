@@ -1,12 +1,15 @@
 <template>
   <div id="app">
+    <NavBar />
+
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <ContactList />
-   <EventsExample
+    <!-- <ContactList /> -->
+   <!-- <EventsExample
    v-bind:title="parentTitle"
    @callParentFunction="parentFunction"
-   />
+   /> -->
+   <router-view></router-view>
   </div>
 </template>
 
@@ -14,6 +17,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import ContactList from './components/ContactList.vue';
 import EventsExample from './components/EventsExample.vue';
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'app',
@@ -27,6 +31,7 @@ export default {
     HelloWorld,
     ContactList,
     EventsExample,
+    NavBar,
   },
 
   methods: {
