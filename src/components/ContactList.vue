@@ -13,6 +13,7 @@
 
     <button type="submit">ADD CONTACT</button>
   </form>
+  <ContactDetail :contact="routeContact"/>
   <ContactsTable :contactsList='contacts'/>
 
 </div>
@@ -20,10 +21,13 @@
 
 
 <script>
-import ContactsTable from './ContactsTable'
+import ContactsTable from './ContactsTable';
+import ContactDetail from './ContactDetail';
+
 export default{
   components: {
-    ContactsTable
+    ContactsTable,
+    ContactDetail,
   },
   data() {
     return{
@@ -33,12 +37,12 @@ export default{
         email: '',
       },
       contacts: [
-        {firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
-        {firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
-        {firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
-        {firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
-        {firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
-        {firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
+        {id: 1,firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
+        {id: 2,firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
+        {id: 3,firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
+        {id: 4,firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
+        {id: 5,firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
+        {id: 6,firstName: "Saban",lastName: "Saulic",email: "saban@saulic.grand"},
       ]
     }
   },
@@ -55,6 +59,12 @@ export default{
       console.log(index);
     }
   },
+
+  computed: {
+    routeContact(){
+      return this.contacts.find(contact => contact.id == this.$route.params.id)
+    }
+  }
 }
 </script>
 

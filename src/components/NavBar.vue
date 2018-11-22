@@ -2,10 +2,10 @@
 <div >
   <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <router-link class="nav-link" to="contacts">Contacts</router-link>
+    <router-link class="nav-link" to="/contacts">Contacts</router-link>
   </li>
   <li class="nav-item">
-    <router-link class="nav-link" to="add-contact">Add Contact</router-link>
+    <router-link class="nav-link" to="/add-contact">Add Contact</router-link>
 
   </li>
   <li class="nav-item">

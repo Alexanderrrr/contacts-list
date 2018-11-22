@@ -6,15 +6,17 @@
     <thead>
       <th>KEY</th>
       <th>Firt Name</th>
-      <th>Last Name</th>
       <th>email</th>
       <th></th>
     </thead>
     <tbody>
       <tr v-for="(contact, index) in contactsList" :key="index">
         <td>{{ index }}</td>
-        <td>{{ contact.firstName }}</td>
-        <td>{{ contact.lastName }}</td>
+        <td>
+        <router-link :to="{ name: 'contact-details', params: {id: contact.id}}">
+          {{ contact.firstName }} {{ contact.lastName }}
+        </router-link>
+        </td>
         <td>{{ contact.email }}</td>
         <td>
           <button class="btn btn-danger" @click='removeContact(contact)'>Remove</button>
