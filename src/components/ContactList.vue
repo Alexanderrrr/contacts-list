@@ -13,35 +13,18 @@
 
     <button type="submit">ADD CONTACT</button>
   </form>
-  <h3>Contact List</h3>
+  <ContactsTable :contactsList='contacts'/>
 
-  <table border=1>
-    <thead>
-      <th>KEY</th>
-      <th>Firt Name</th>
-      <th>Last Name</th>
-      <th>email</th>
-      <th></th>
-    </thead>
-    <tbody>
-      <tr v-for="(contact, index) in contacts" :key="index">
-        <td>{{ index }}</td>
-        <td>{{ contact.firstName }}</td>
-        <td>{{ contact.lastName }}</td>
-        <td>{{ contact.email }}</td>
-        <td>
-          <button class="btn btn-danger" @click='removeContact(contact)'>Remove</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 </template>
 
 
 <script>
+import ContactsTable from './ContactsTable'
 export default{
-
+  components: {
+    ContactsTable
+  },
   data() {
     return{
       newContact: {
